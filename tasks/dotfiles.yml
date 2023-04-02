@@ -1,0 +1,40 @@
+- name: Installing stow
+  apt: name=stow
+  tags:
+    - install
+    - dotfiles
+    - stow
+- name: Cloning dotfiles
+  ansible.builtin.git:
+    repo: 'git@github.com:olad5/dotfiles.git'
+    dest: "{{ lookup('env', 'HOME') }}/dotfiles"
+    update: yes
+    accept_hostkey: yes
+    version: master
+  tags:
+    - install
+    - dotfiles
+    - stow
+- name: Cloning scripts
+  ansible.builtin.git:
+    repo: 'git@github.com:olad5/scripts.git'
+    dest: "{{ lookup('env', 'HOME') }}/scripts"
+    update: yes
+    accept_hostkey: yes
+    version: master
+  tags:
+    - install
+    - dotfiles
+    - stow
+- name: Install scripts
+  shell: cd $HOME/scripts && ./install_scripts
+  tags:
+    - install
+    - dotfiles
+    - stow
+- name: Stow dotfiles
+  shell: cd $HOME/scripts/stow/ && ./stow_dotfiles
+  tags:
+    - install
+    - dotfiles
+    - stow

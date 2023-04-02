@@ -1,0 +1,23 @@
+- name: required libraries for neovim
+  become: true
+  apt:
+    name: [ "apt-transport-https"]
+  tags:
+    - neovim
+    - install
+    - dotfiles
+- name: Neovim PPA setting
+  become: true
+  shell: apt-add-repository -y ppa:neovim-ppa/unstable
+  tags:
+    - neovim
+    - install
+- name: Neovim apt installation
+  become: true
+  apt:
+    update_cache: yes
+    name: neovim
+  tags:
+    - neovim
+    - install
+    - dotfiles

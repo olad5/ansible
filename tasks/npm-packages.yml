@@ -1,0 +1,63 @@
+- name: Install Yarn
+  shell: . ~/.bashrc && npm install -g yarn
+  args:
+    chdir: "{{ ansible_env.HOME }}"
+  tags:
+    - install
+    - node
+
+- name: Install eslint
+  shell: . ~/.bashrc && npm install -g eslint
+  args:
+    chdir: "{{ ansible_env.HOME }}"
+  tags:
+    - install
+    - node
+
+- name: Install Typescript server
+  shell: . ~/.bashrc && npm install -g typescript-language-server
+  args:
+    chdir: "{{ ansible_env.HOME }}"
+  tags:
+    - install
+    - node
+
+- name: Install Typescript
+  shell: . ~/.bashrc && npm install -g typescript
+  args:
+    chdir: "{{ ansible_env.HOME }}"
+  tags:
+    - install
+    - node
+
+- name: Install TS-Node
+  shell: . ~/.bashrc && npm install -g ts-node
+  args:
+    chdir: "{{ ansible_env.HOME }}"
+  tags:
+    - install
+    - node
+
+- name: Install autocannon
+  shell: . ~/.bashrc && npm install -g autocannon
+  args:
+    chdir: "{{ ansible_env.HOME }}"
+  tags:
+    - install
+    - node
+
+- name: Install forever
+  shell: . ~/.bashrc && npm install -g forever
+  args:
+    chdir: "{{ ansible_env.HOME }}"
+  tags:
+    - install
+    - node
+
+- name: Install live-server
+  shell: . ~/.bashrc && npm install -g live-server
+  args:
+    chdir: "{{ ansible_env.HOME }}"
+  tags:
+    - install
+    - node

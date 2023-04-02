@@ -1,0 +1,19 @@
+- name: Install Oh-My-Bash
+  apt: name=bash
+  tags: &tags_for_bash_tasks [ 'install',  'dotfiles', 'bash' ]
+
+- name: clone Oh-My-Bash
+  ansible.builtin.git:
+    repo: 'https://github.com/ohmybash/oh-my-bash.git'
+    dest: "~/.oh-my-bash/"
+  tags: *tags_for_bash_tasks
+
+- name: Oh-My-Bash
+  shell: curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh
+  tags: *tags_for_bash_tasks
+  become_user: oladipo
+
+- name: remove default bashrc and profile
+  shell: rm ~/.bashrc  ~/.profile
+  tags: *tags_for_bash_tasks
+  become_user: oladipo
