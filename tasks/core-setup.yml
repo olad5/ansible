@@ -16,10 +16,18 @@
     - neovim
     - core
 
-- name: Install System Packages 3 (the rest)
+- name: Install System Packages 3 
   become: true
   apt:
-    name: [ "compton", "curl", "htop", "golang", "lsof", "bspwm", "sxhkd", "ninja-build", "python3-pip",  "pavucontrol",  ]
+    name: [ "compton", "curl", "htop", "golang", "lsof", "bspwm", "sxhkd", "ninja-build", "python3-pip",  "pavucontrol" ]
+  tags:
+    - install
+    - core
+
+- name: Install System Packages 4 
+  become: true
+  apt:
+    name: [ "polybar", "acpi", "feh" , "dex" , "jq", "wmctrl", "tabbed" ] 
   tags:
     - install
     - core
