@@ -1,7 +1,7 @@
 - name: Install packages
   become: true
   apt:
-    name: [ "alacritty", "tmux", "blueman", "vlc", "mpv", "wireshark", "fzf", "zathura", "gimp", "xclip", "xdo", "xdotool",  "tldr", "sxiv", "tipp10", "klavaro", "rsync", "artha", "kcolorchooser", "ripgrep" ]
+    name: [ "alacritty", "tmux", "blueman", "vlc", "mpv", "wireshark", "fzf", "zathura", "gimp", "xclip", "xdo", "xdotool",  "tldr", "sxiv", "tipp10", "klavaro", "rsync", "artha", "kcolorchooser", "ripgrep" , "flameshot", "antimicrox" ]
   tags:
     - install
     - productivity
