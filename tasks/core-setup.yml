@@ -19,7 +19,7 @@
 - name: Install System Packages 3 
   become: true
   apt:
-    name: [ "compton", "curl", "htop", "golang", "lsof", "bspwm", "sxhkd", "ninja-build", "python3-pip",  "pavucontrol" ]
+    name: [ "compton", "curl", "htop",  "lsof", "bspwm", "sxhkd", "ninja-build", "python3-pip",  "pavucontrol" ]
   tags:
     - install
     - core
