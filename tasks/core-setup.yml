@@ -1,7 +1,7 @@
 - name: Install System Packages 1 (build-essential, cmake, pkg-config)
   become: true
   apt:
-    name: ["build-essential", "cmake", "pkg-config", ]
+    name: ["build-essential", "cmake", "pkg-config"]
   tags:
     - install
     - neovim
@@ -10,24 +10,37 @@
 - name: Install System Packages 2 (lua, unzip, wget, libtool, libtool-bin, gettext, tree)
   become: true
   apt:
-    name: [ "lua5.1", "unzip", "wget", "libtool", "libtool-bin", "gettext", "tree"]
+    name:
+      ["lua5.1", "unzip", "wget", "libtool", "libtool-bin", "gettext", "tree"]
   tags:
     - install
     - neovim
     - core
 
-- name: Install System Packages 3 
+- name: Install System Packages 3
   become: true
   apt:
-    name: [ "compton", "curl", "htop",  "lsof", "bspwm", "sxhkd", "ninja-build", "python3-pip",  "pavucontrol" ]
+    name:
+      [
+        "compton",
+        "curl",
+        "htop",
+        "lsof",
+        "bspwm",
+        "sxhkd",
+        "ninja-build",
+        "python3-pip",
+        "pavucontrol",
+      ]
   tags:
     - install
     - core
 
-- name: Install System Packages 4 
+- name: Install System Packages 4
   become: true
   apt:
-    name: [ "polybar", "acpi", "feh" , "dex" , "jq", "wmctrl", "tabbed" , "trash-cli"] 
+    name:
+      ["polybar", "acpi", "feh", "dex", "jq", "wmctrl", "tabbed", "trash-cli"]
   tags:
     - install
     - core

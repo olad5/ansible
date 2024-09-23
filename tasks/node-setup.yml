@@ -13,7 +13,7 @@
 - name: Install node
   become: no
   shell: >
-    . {{ ansible_env.HOME }}/.nvm/nvm.sh && nvm install {{ item }} && source ~/.bashrc 
+    . {{ ansible_env.HOME }}/.nvm/nvm.sh && nvm install {{ item }} && source ~/.bashrc
   args:
     executable: /bin/bash
     chdir: "{{ ansible_env.HOME }}"
