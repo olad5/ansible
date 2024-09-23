@@ -27,7 +27,7 @@
 - name: Install System Packages 4 
   become: true
   apt:
-    name: [ "polybar", "acpi", "feh" , "dex" , "jq", "wmctrl", "tabbed" ] 
+    name: [ "polybar", "acpi", "feh" , "dex" , "jq", "wmctrl", "tabbed" , "trash-cli"] 
   tags:
     - install
     - core
